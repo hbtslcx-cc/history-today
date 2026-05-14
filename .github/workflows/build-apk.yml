@@ -20,18 +20,19 @@ jobs:
         distribution: 'temurin'
         cache: gradle
     
-    - name: Install Gradle
+    - name: Fix gradlew permissions and line endings
+      working-directory: history-today-android
       run: |
-        sudo apt-get update
-        sudo apt-get install -y gradle
+        chmod +x gradlew
+        sed -i 's/\r$//' gradlew
     
     - name: Build Debug APK
       working-directory: history-today-android
-      run: gradle assembleDebug
+      run: ./gradlew assembleDebug
     
     - name: Build Release APK
       working-directory: history-today-android
-      run: gradle assembleRelease
+      run: ./gradlew assembleRelease
     
     - name: Upload Debug APK
       uses: actions/upload-artifact@v4

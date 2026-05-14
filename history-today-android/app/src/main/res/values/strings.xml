@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">History Today</string>
+    <string name="today">今日</string>
+    <string name="back">返回</string>
+    <string name="share">分享</string>
+    <string name="favorite">收藏</string>
+    <string name="history_events">历史事件</string>
+    <string name="go_to_today">返回今天</string>
+    <string name="no_events">暂无历史事件</string>
+    <string name="event_not_found">事件不存在</string>
+    <string name="related_events">同日期其他事件</string>
+</resources>

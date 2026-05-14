@@ -1,0 +1,16 @@
+<resources>
+    <color name="primary">#1e3a5f</color>
+    <color name="primary_light">#4a90d9</color>
+    <color name="secondary">#e74c3c</color>
+    <color name="background">#f8f9fa</color>
+    <color name="card_background">#ffffff</color>
+    <color name="lunar">#8b4513</color>
+    <color name="yi">#27ae60</color>
+    <color name="ji">#e74c3c</color>
+    <color name="text_primary">#333333</color>
+    <color name="text_secondary">#666666</color>
+    <color name="divider">#e0e0e0</color>
+    <color name="selected">#1e3a5f</color>
+    <color name="today">#e74c3c</color>
+    <color name="disabled">#999999</color>
+</resources>

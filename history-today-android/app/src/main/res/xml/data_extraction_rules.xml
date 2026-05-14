@@ -1,0 +1,5 @@
+<data-extraction-rules>
+    <cloud-backup>
+        <include domain="com.historytoday" />
+    </cloud-backup>
+</data-extraction-rules>

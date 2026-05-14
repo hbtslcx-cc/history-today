@@ -6,12 +6,15 @@ import com.historytoday.domain.model.CalendarDay
 import com.historytoday.domain.model.LunarInfo
 import com.historytoday.domain.usecase.GetCalendarMonthUseCase
 import com.historytoday.domain.usecase.GetLunarInfoUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import java.time.LocalDate
+import javax.inject.Inject
 
-class CalendarViewModel(
+@HiltViewModel
+class CalendarViewModel @Inject constructor(
     private val getCalendarMonth: GetCalendarMonthUseCase,
     private val getLunarInfo: GetLunarInfoUseCase
 ) : ViewModel() {

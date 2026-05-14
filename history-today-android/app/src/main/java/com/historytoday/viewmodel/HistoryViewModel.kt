@@ -7,12 +7,15 @@ import com.historytoday.domain.model.HistoryEvent
 import com.historytoday.domain.model.HistoryPeriod
 import com.historytoday.domain.model.RegionType
 import com.historytoday.domain.usecase.GetEventsByDateUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import java.time.LocalDate
+import javax.inject.Inject
 
-class HistoryViewModel(
+@HiltViewModel
+class HistoryViewModel @Inject constructor(
     private val getEventsByDate: GetEventsByDateUseCase
 ) : ViewModel() {
 

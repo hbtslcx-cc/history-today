@@ -29,6 +29,13 @@ class DataInitializer(
                 category = event.category,
                 region = event.region,
                 period = event.period,
+                importance = when (event.importance) {
+                    5 -> "S"
+                    4 -> "A"
+                    3 -> "B"
+                    2 -> "C"
+                    else -> "D"
+                },
                 description = event.description,
                 shortDesc = event.shortDesc,
                 imageUrl = event.imageUrl,

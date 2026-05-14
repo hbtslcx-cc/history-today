@@ -12,6 +12,7 @@ data class EventEntity(
     val category: String,
     val region: String,
     val period: String,
+    val importance: String,
     val description: String,
     val shortDesc: String,
     val imageUrl: String?,

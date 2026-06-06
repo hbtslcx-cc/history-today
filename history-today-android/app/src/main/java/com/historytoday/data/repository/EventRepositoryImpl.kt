@@ -116,6 +116,7 @@ private fun HistoryEvent.toEntity(): com.historytoday.data.local.EventEntity {
         category = category.name,
         region = region.name,
         period = period.name,
+        importance = importance.name,
         description = description,
         shortDesc = shortDesc,
         imageUrl = imageUrl,

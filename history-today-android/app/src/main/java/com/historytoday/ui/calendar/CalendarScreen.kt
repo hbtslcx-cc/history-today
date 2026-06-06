@@ -40,6 +40,7 @@ import com.historytoday.domain.model.CalendarDay
 import com.historytoday.ui.calendar.components.CalendarDayCell
 import com.historytoday.ui.calendar.components.HistoryEntryCard
 import com.historytoday.ui.calendar.components.LunarInfoCard
+import com.historytoday.ui.calendar.components.MonthView
 import com.historytoday.ui.calendar.components.WeekdayHeader
 import com.historytoday.ui.calendar.components.YiJiCard
 import com.historytoday.viewmodel.CalendarViewModel
@@ -178,35 +179,6 @@ fun TopBar(
 
         IconButton(onClick = onSettingsClick) {
             Icon(Icons.Default.Settings, contentDescription = "设置", tint = Color.White)
-        }
-    }
-}
-
-@Composable
-fun MonthView(
-    days: List<CalendarDay>,
-    onDayClick: (CalendarDay) -> Unit
-) {
-    androidx.compose.material3.Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(16.dp),
-        shape = androidx.compose.foundation.shape.RoundedCornerShape(12.dp)
-    ) {
-        Column(modifier = Modifier.padding(8.dp)) {
-            for (weekIndex in days.indices step 7) {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceEvenly
-                ) {
-                    for (dayIndex in weekIndex until minOf(weekIndex + 7, days.size)) {
-                        CalendarDayCell(
-                            day = days[dayIndex],
-                            onDayClick = onDayClick
-                        )
-                    }
-                }
-            }
         }
     }
 }

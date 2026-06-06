@@ -22,7 +22,8 @@ import com.historytoday.domain.model.CalendarDay
 @Composable
 fun CalendarDayCell(
     day: CalendarDay,
-    onDayClick: (CalendarDay) -> Unit
+    onDayClick: (CalendarDay) -> Unit,
+    modifier: Modifier = Modifier
 ) {
     val isCurrentMonth = day.date.monthValue == day.date.year.toString().toIntOrNull()?.let {
         day.date.monthValue

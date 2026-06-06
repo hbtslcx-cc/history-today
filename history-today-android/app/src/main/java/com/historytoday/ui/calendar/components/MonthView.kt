@@ -39,26 +39,3 @@ fun MonthView(
         }
     }
 }
-
-import androidx.compose.foundation.layout.Box
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-
-@Composable
-fun CalendarDayCell(
-    day: CalendarDay,
-    onDayClick: (CalendarDay) -> Unit,
-    modifier: Modifier = Modifier
-) {
-    Box(
-        modifier = modifier
-            .padding(2.dp)
-            .clickable { onDayClick(day) }
-    ) {
-        androidx.compose.material3.Text(
-            text = day.date.dayOfMonth.toString(),
-            modifier = Modifier.padding(8.dp),
-            fontSize = 16.sp
-        )
-    }
-}

@@ -53,7 +53,7 @@ class CalendarViewModel @Inject constructor(
         loadLunarInfo(today)
     }
 
-    private fun loadCalendarMonth() {
+    fun loadCalendarMonth() {
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true) }
             try {

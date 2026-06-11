@@ -12,9 +12,9 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowLeft
-import androidx.compose.material.icons.filled.ArrowRight
 import androidx.compose.material.icons.filled.Share
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.ArrowForward
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -35,7 +35,6 @@ import com.historytoday.domain.model.RegionType
 import com.historytoday.ui.history.components.CategoryFilter
 import com.historytoday.ui.history.components.EventCard
 import com.historytoday.viewmodel.HistoryViewModel
-import dagger.hilt.android.lifecycle.ViewModelScoped
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import javax.inject.Inject
@@ -130,11 +129,11 @@ fun TopBar(
         verticalAlignment = Alignment.CenterVertically
     ) {
         IconButton(onClick = onBackClick) {
-            Icon(Icons.Default.ArrowLeft, contentDescription = "返回", tint = Color.White)
+            Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "返回", tint = Color.White)
         }
 
         IconButton(onClick = onPrevDay) {
-            Icon(Icons.Default.ArrowLeft, contentDescription = "前一天", tint = Color.White)
+            Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "前一天", tint = Color.White)
         }
 
         Column(
@@ -155,7 +154,7 @@ fun TopBar(
         }
 
         IconButton(onClick = onNextDay) {
-            Icon(Icons.Default.ArrowRight, contentDescription = "后一天", tint = Color.White)
+            Icon(Icons.AutoMirrored.Filled.ArrowForward, contentDescription = "后一天", tint = Color.White)
         }
 
         IconButton(onClick = {}) {

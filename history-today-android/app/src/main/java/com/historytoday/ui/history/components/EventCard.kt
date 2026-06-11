@@ -7,9 +7,12 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Image
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.Text
+import androidx.compose.material3.Icon
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -48,7 +51,7 @@ fun EventCard(
                 )
             }
 
-            androidx.compose.foundation.layout.Spacer(modifier = Modifier.width(16.dp))
+                    androidx.compose.foundation.layout.Spacer(modifier = Modifier.width(16.dp))
 
             Column(modifier = Modifier.weight(1f)) {
                 Text(
@@ -67,7 +70,7 @@ fun EventCard(
                 )
 
                 Row(modifier = Modifier.padding(top = 8.dp)) {
-                    androidx.compose.material3.Surface(
+                    Surface(
                         color = event.category.getColor().copy(alpha = 0.1f),
                         shape = androidx.compose.foundation.shape.RoundedCornerShape(4.dp)
                     ) {
@@ -81,8 +84,8 @@ fun EventCard(
 
                     if (!event.imageUrl.isNullOrEmpty()) {
                         androidx.compose.foundation.layout.Spacer(modifier = Modifier.width(8.dp))
-                        androidx.compose.material3.Icon(
-                            imageVector = androidx.compose.material.icons.Icons.Default.Image,
+                        Icon(
+                            imageVector = Icons.Filled.Image,
                             contentDescription = "有图片",
                             tint = Color(0xFF999999),
                             modifier = Modifier.size(16.dp)

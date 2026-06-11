@@ -16,9 +16,10 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowLeft
-import androidx.compose.material.icons.filled.ArrowRight
+import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.ArrowForward
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CircularProgressIndicator
@@ -44,8 +45,6 @@ import com.historytoday.ui.calendar.components.MonthView
 import com.historytoday.ui.calendar.components.WeekdayHeader
 import com.historytoday.ui.calendar.components.YiJiCard
 import com.historytoday.viewmodel.CalendarViewModel
-import dagger.hilt.android.lifecycle.ViewModelScoped
-import java.time.LocalDate
 import javax.inject.Inject
 
 class CalendarScreen @Inject constructor() {
@@ -153,7 +152,7 @@ fun TopBar(
         verticalAlignment = Alignment.CenterVertically
     ) {
         IconButton(onClick = onPrevMonth) {
-            Icon(Icons.Default.ArrowLeft, contentDescription = "上一月", tint = Color.White)
+            Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "上一月", tint = Color.White)
         }
 
         Column(
@@ -202,7 +201,7 @@ fun BottomBar(onTodayClick: () -> Unit) {
             shape = androidx.compose.foundation.shape.RoundedCornerShape(22.dp)
         ) {
             Image(
-                imageVector = androidx.compose.material.icons.Icons.Default.Home,
+                imageVector = Icons.Filled.Home,
                 contentDescription = "返回今天",
                 modifier = Modifier.size(20.dp),
                 colorFilter = androidx.compose.ui.graphics.ColorFilter.tint(Color.White)

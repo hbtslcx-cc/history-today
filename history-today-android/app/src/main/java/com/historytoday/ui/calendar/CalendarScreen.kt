@@ -108,6 +108,7 @@ class CalendarScreen @Inject constructor() {
 
                         MonthView(
                             days = uiState.calendarDays,
+                            currentMonth = uiState.currentMonth,
                             onDayClick = { day ->
                                 viewModel.onDateSelected(day.date)
                             }

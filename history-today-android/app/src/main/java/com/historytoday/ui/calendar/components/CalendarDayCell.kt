@@ -22,12 +22,11 @@ import com.historytoday.domain.model.CalendarDay
 @Composable
 fun CalendarDayCell(
     day: CalendarDay,
+    currentMonth: Int,
     onDayClick: (CalendarDay) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    val isCurrentMonth = day.date.monthValue == day.date.year.toString().toIntOrNull()?.let {
-        day.date.monthValue
-    } ?: day.date.monthValue
+    val isCurrentMonth = day.date.monthValue == currentMonth
 
     Box(
         modifier = Modifier

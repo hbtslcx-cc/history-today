@@ -13,6 +13,7 @@ import com.historytoday.domain.model.CalendarDay
 @Composable
 fun MonthView(
     days: List<CalendarDay>,
+    currentMonth: Int,
     onDayClick: (CalendarDay) -> Unit
 ) {
     Card(
@@ -30,6 +31,7 @@ fun MonthView(
                     for (dayIndex in weekIndex until minOf(weekIndex + 7, days.size)) {
                         CalendarDayCell(
                             day = days[dayIndex],
+                            currentMonth = currentMonth,
                             onDayClick = onDayClick,
                             modifier = Modifier.weight(1f)
                         )

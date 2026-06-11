@@ -27,18 +27,17 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.historytoday.viewmodel.DetailViewModel
-import javax.inject.Inject
 
-class DetailScreen @Inject constructor() {
+class DetailScreen {
 
     @Composable
     fun Content(
         navController: NavController,
         eventId: String,
-        viewModel: DetailViewModel = viewModel()
+        viewModel: DetailViewModel = hiltViewModel()
     ) {
         val uiState = viewModel.uiState.value
 

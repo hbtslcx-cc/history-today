@@ -35,7 +35,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.historytoday.domain.model.CalendarDay
 import com.historytoday.ui.calendar.components.CalendarDayCell
@@ -45,14 +45,13 @@ import com.historytoday.ui.calendar.components.MonthView
 import com.historytoday.ui.calendar.components.WeekdayHeader
 import com.historytoday.ui.calendar.components.YiJiCard
 import com.historytoday.viewmodel.CalendarViewModel
-import javax.inject.Inject
 
-class CalendarScreen @Inject constructor() {
+class CalendarScreen {
 
     @Composable
     fun Content(
         navController: NavController,
-        viewModel: CalendarViewModel = viewModel()
+        viewModel: CalendarViewModel = hiltViewModel()
     ) {
         val uiState = viewModel.uiState.value
 

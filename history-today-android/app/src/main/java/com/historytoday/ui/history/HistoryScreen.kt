@@ -28,7 +28,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.historytoday.domain.model.EventCategory
 import com.historytoday.domain.model.RegionType
@@ -37,9 +37,8 @@ import com.historytoday.ui.history.components.EventCard
 import com.historytoday.viewmodel.HistoryViewModel
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
-import javax.inject.Inject
 
-class HistoryScreen @Inject constructor() {
+class HistoryScreen {
 
     @Composable
     fun Content(
@@ -47,7 +46,7 @@ class HistoryScreen @Inject constructor() {
         year: Int,
         month: Int,
         day: Int,
-        viewModel: HistoryViewModel = viewModel()
+        viewModel: HistoryViewModel = hiltViewModel()
     ) {
         val uiState = viewModel.uiState.value
         val date = LocalDate.of(year, month, day)

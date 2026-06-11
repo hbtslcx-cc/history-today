@@ -37,7 +37,7 @@ class HistoryTodayApp : Application() {
                 writer.println("Time: $timestamp")
                 writer.println("App Version: ${packageManager.getPackageInfo(packageName, 0).versionName}")
                 writer.println("Android SDK: ${android.os.Build.VERSION.SDK_INT}")
-                writer.println("Device: ${android.os.Build.MANUFACTERER} ${android.os.Build.MODEL}")
+                writer.println("Device: ${android.os.Build.MANUFACTURER} ${android.os.Build.MODEL}")
                 writer.println("---")
                 throwable.printStackTrace(writer)
             }

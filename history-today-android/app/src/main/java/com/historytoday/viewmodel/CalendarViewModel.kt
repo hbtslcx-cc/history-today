@@ -1,5 +1,6 @@
 package com.historytoday.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.historytoday.domain.model.CalendarDay
@@ -70,8 +71,9 @@ class CalendarViewModel @Inject constructor(
                     it.copy(calendarDays = updatedDays, isLoading = false)
                 }
             } catch (e: Exception) {
+                Log.e("CalendarViewModel", "loadCalendarMonth failed", e)
                 _uiState.update {
-                    it.copy(isLoading = false, error = e.message)
+                    it.copy(isLoading = false, error = e.message ?: e.javaClass.simpleName)
                 }
             }
         }

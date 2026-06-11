@@ -55,10 +55,6 @@ class CalendarScreen {
     ) {
         val uiState = viewModel.uiState.value
 
-        LaunchedEffect(Unit) {
-            viewModel.loadCalendarMonth()
-        }
-
         Scaffold(
             topBar = {
                 TopBar(
@@ -102,6 +98,17 @@ class CalendarScreen {
                             .fillMaxSize()
                             .verticalScroll(rememberScrollState())
                     ) {
+                        uiState.error?.let { errorMsg ->
+                            Text(
+                                text = "加载失败: $errorMsg",
+                                fontSize = 14.sp,
+                                color = Color(0xFFe74c3c),
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(16.dp)
+                            )
+                        }
+
                         WeekdayHeader()
 
                         MonthView(

@@ -1,5 +1,5 @@
 <resources>
-    <style name="Theme.HistoryToday" parent="Theme.Material3.DayNight">
+    <style name="Theme.HistoryToday" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryContainer">@color/primary_light</item>
         <item name="colorSecondary">@color/secondary</item>
